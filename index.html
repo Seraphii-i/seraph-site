@@ -1,106 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seraph</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>Seraph</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="cursor-glow"></div>
+<canvas id="rain"></canvas>
+<div class="glow"></div>
+<div class="fog"></div>
 
-<section class="hero">
+<header class="hero parallax">
 
-    <div class="hero-content">
+    <div class="hero-inner reveal">
 
         <h1>Seraph</h1>
 
-        <p class="subtitle">
-            Finland • 17 • Photography • Aviation • Motorcycles
+        <p class="sub">Finland • 17 • Media • Cybersecurity • Aviation</p>
+
+        <p class="desc">
+            Quiet. Observant. Focused on building something stable.
         </p>
 
-        <a href="#about" class="scroll-btn">
-            Explore
-        </a>
+        <a href="#about" class="btn">Enter</a>
 
     </div>
 
-</section>
+</header>
 
 <section id="about" class="section reveal">
 
-    <h2>Who I Am</h2>
+    <h2>About</h2>
 
-    <p>
-        Quiet at first. Easy-going once I get comfortable.
+    <div class="glass">
+        I prefer clarity over noise. I don’t really chase attention — I build things slowly and deliberately.
 
-        I enjoy genuine conversations, learning useful skills,
-        spending time outdoors, and building a life with purpose.
+        Most of my interests are practical: cameras, machines, systems, movement, and understanding how things work.
 
-        Most of my interests revolve around technology,
-        vehicles, photography, aviation, faith, and nature.
-    </p>
+        I like quiet environments, honest people, and long-term thinking.
+    </div>
 
 </section>
 
 <section class="section reveal">
 
-    <h2>Things I Enjoy</h2>
+    <h2>Interests</h2>
 
-    <div class="cards">
+    <div class="grid">
 
-        <div class="card">
-            <h3>Aviation</h3>
-            <p>
-                Military aviation, aircraft technology,
-                and hopefully earning a PPL one day.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Photography</h3>
-            <p>
-                Capturing moments, landscapes,
-                vehicles and everyday life.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Motorcycles</h3>
-            <p>
-                Sport bikes, long rides and the freedom
-                that comes with them.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Nature</h3>
-            <p>
-                Hiking, camping and escaping into forests
-                whenever possible.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Technology</h3>
-            <p>
-                Cybersecurity, computers and understanding
-                how things work.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Faith</h3>
-            <p>
-                A central part of how I approach life,
-                relationships and the future.
-            </p>
-        </div>
+        <div class="card">Aviation</div>
+        <div class="card">Cybersecurity</div>
+        <div class="card">Photography</div>
+        <div class="card">Motorcycles</div>
+        <div class="card">Nature</div>
+        <div class="card">Faith</div>
 
     </div>
 
@@ -108,43 +69,59 @@
 
 <section class="section reveal">
 
-    <h2>Current Direction</h2>
+    <h2>Gallery</h2>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="img">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" class="img">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="img">
+
+    </div>
+
+</section>
+
+<section class="section reveal">
+
+    <h2>Spotify</h2>
+
+    <div class="glass">
+
+        <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M"
+        width="100%" height="152"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+        </iframe>
+
+    </div>
+
+</section>
+
+<section class="section reveal">
+
+    <h2>Direction</h2>
 
     <div class="timeline">
-
-        <div class="timeline-item">
-            Media Studies
-        </div>
-
-        <div class="timeline-item">
-            Driver's License
-        </div>
-
-        <div class="timeline-item">
-            Military Service
-        </div>
-
-        <div class="timeline-item">
-            Cybersecurity
-        </div>
-
-        <div class="timeline-item">
-            Northern Finland
-        </div>
-
+        <div>Media Studies</div>
+        <div>Driver’s License</div>
+        <div>Military Service</div>
+        <div>Cybersecurity Career</div>
+        <div>Northern Finland</div>
     </div>
 
 </section>
 
-<footer>
+<footer class="reveal">
 
-    <p>
-        Thanks for visiting.
-    </p>
-
-    <h3>— Seraph</h3>
+    <div>Seraph</div>
+    <span>Finland</span>
 
 </footer>
+
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img">
+</div>
 
 <script src="script.js"></script>
 
