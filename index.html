@@ -1,216 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seraph - Introduction</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Seraph</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#0b0b0b;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at var(--x,50%) var(--y,50%),
+    rgba(255,255,255,.08),
+    transparent 250px);
+    pointer-events:none;
+    z-index:0;
+}
+
+section{
+    position:relative;
+    z-index:1;
+    min-height:100vh;
+    padding:100px 10%;
+}
+
+.hero{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:clamp(4rem,10vw,8rem);
+    font-weight:800;
+}
+
+.hero p{
+    margin-top:15px;
+    color:#999;
+    font-size:1.2rem;
+}
+
+.hero .tags{
+    margin-top:30px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.tag{
+    border:1px solid #333;
+    padding:10px 18px;
+    border-radius:999px;
+    transition:.3s;
+}
+
+.tag:hover{
+    transform:translateY(-4px);
+    border-color:white;
+}
+
+h2{
+    font-size:3rem;
+    margin-bottom:30px;
+}
+
+.about{
+    max-width:850px;
+    line-height:1.8;
+    color:#cfcfcf;
+    font-size:1.1rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #222;
+    border-radius:20px;
+    padding:25px;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#666;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#aaa;
+    line-height:1.6;
+}
+
+.goal{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:20px;
+    border-bottom:1px solid #222;
+}
+
+.goal span{
+    color:#888;
+}
+
+footer{
+    text-align:center;
+    padding:80px 20px;
+    color:#777;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+</style>
 </head>
+
 <body>
-    <div class="cursor"></div>
-    
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-text">Seraph</span>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#interests" class="nav-link">Interests</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#future" class="nav-link">Future</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Seraph</h1>
-                <div class="hero-subtitle">
-                    <span class="typing-text"></span>
-                </div>
-                <div class="hero-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Finland (EEST, GMT+3)</p>
-                    <p><i class="fas fa-birthday-cake"></i> 17 years old</p>
-                </div>
-                <div class="hero-scroll">
-                    <span>Scroll down</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="avatar-container">
-                    <div class="avatar"></div>
-                    <div class="avatar-border"></div>
-                </div>
-            </div>
-        </div>
-        <div class="particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-    </section>
+<section class="hero">
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Calm and introverted at first, but easy-going once I get comfortable. I prefer genuine conversations over small talk and usually enjoy listening more than talking.</p>
-                    <p>I love giving without expecting anything in return. I blush easily and I'm weak against teasing, compliments or even getting that next-level reassurance, comfort and being babied.</p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <i class="fas fa-venus-mars"></i>
-                            <span>Male, He/Him</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-heart"></i>
-                            <span>Straight</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-music"></i>
-                            <span>Just stalk my Spotify at this point...</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="image-card">
-                        <div class="card-content">
-                            <i class="fas fa-cross"></i>
-                            <h3>Faith</h3>
-                            <p>Important part of my life</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<h1>Seraph</h1>
 
-    <section id="interests" class="interests">
-        <div class="container">
-            <h2 class="section-title">My Interests</h2>
-            <div class="interests-grid">
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-fighter-jet"></i>
-                    </div>
-                    <h3>Military Aviation</h3>
-                    <p>Strategy and vehicles</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h3>Photography</h3>
-                    <p>Capturing moments</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <h3>Motorcycles</h3>
-                    <p>Freedom on two wheels</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h3>Trucks</h3>
-                    <p>Power and capability</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-mountain"></i>
-                    </div>
-                    <h3>Hiking & Camping</h3>
-                    <p>Connecting with nature</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Cooking & Baking</h3>
-                    <p>Culinary adventures</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3>Aviation</h3>
-                    <p>Working toward a PPL</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-headphones"></i>
-                    </div>
-                    <h3>Music</h3>
-                    <p>Soundtrack to life</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Deep Conversations</h3>
-                    <p>Meaningful connections</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-tree"></i>
-                    </div>
-                    <h3>Nature</h3>
-                    <p>Peace and tranquility</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <h3>Christmas</h3>
-                    <p>Most wonderful time</p>
-                </div>
-                <div class="interest-card">
-                    <div class="card-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3>Gaming</h3>
-                    <p>Virtual adventures</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<p>17 • Finland</p>
 
-    <section id="future" class="future">
-        <div class="container">
-            <h2 class="section-title">Future Plans</h2>
-            <div class="future-content">
-                <div class="future-text">
-                    <p>Aiming for a career in cybersecurity with the <strong>Finnish Defence Forces</strong>, while living in the north in a traditional log cottage.</p>
-                    <p>The specialization I'm interested in is part of the Armoured Brigade, so there's also a good chance I'll end up learning to operate tanks and other tracked vehicles.</p>
-                    <div class="future-items">
-                        <div class="future-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <h3>Cybersecurity</h3>
-                                <p>Finnish Defence Forces</p>
-                            </div>
-                        </div>
+<div class="tags">
+<div class="tag">Photography</div>
+<div class="tag">Motorcycles</div>
+<div class="tag">Aviation</div>
+<div class="tag">Cybersecurity</div>
+<div class="tag">Faith</div>
+<div class="tag">Nature</div>
+</div>
+
+</section>
+
+<section class="fade">
+
+<h2>About</h2>
+
+<div class="about">
+I'm a media student from Finland with a strong interest in technology,
+aviation, photography, motorcycles and the outdoors.
+
+Most of the time you'll find me working toward long-term goals,
+exploring nature, taking photos, listening to music or learning new skills.
+
+I prefer genuine conversations over small talk and value honesty,
+respect and clear communication.
+</div>
+
+</section>
+
+<section class="fade">
+
+<h2>Interests</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Military Aviation</h3>
+<p>Aircraft, strategy, defence technology and military history.</p>
+</div>
+
+<div class="card">
+<h3>Photography & Videography</h3>
+<p>Capturing moments, landscapes, vehicles and everyday life.</p>
+</div>
+
+<div class="card">
+<h3>Motorcycles</h3>
+<p>Especially sport bikes, touring and the freedom of the road.</p>
+</div>
+
+<div class="card">
+<h3>Nature</h3>
+<p>Hiking, camping, forests, winter and northern Finland.</p>
+</div>
+
+<div class="card">
+<h3>Technology</h3>
+<p>Cybersecurity, computers and problem solving.</p>
+</div>
+
+<div class="card">
+<h3>Faith</h3>
+<p>An important part of how I approach life and the future.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="fade">
+
+<h2>Current Goals</h2>
+
+<div class="goal">✓ <span>Finish media studies</span></div>
+<div class="goal">✓ <span>Continue developing practical skills</span></div>
+<div class="goal">□ <span>Build a cybersecurity career</span></div>
+<div class="goal">□ <span>Earn a PPL someday</span></div>
+<div class="goal">□ <span>Move north and build a quiet life</span></div>
+
+</section>
+
+<section class="fade">
+
+<h2>Future</h2>
+
+<div class="about">
+Long term, I'd like to work in cybersecurity, continue building useful
+skills and eventually live in northern Finland.
+
+Outside of work, I hope to spend my time with family, photography,
+motorcycles, hiking and exploring the outdoors.
+</div>
+
+</section>
+
+<footer>
+
+DMs Open 7/11
+
+</footer>
+
+<script>
+
+document.addEventListener("mousemove",(e)=>{
+document.body.style.setProperty("--x",e.clientX+"px");
+document.body.style.setProperty("--y",e.clientY+"px");
+});
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
