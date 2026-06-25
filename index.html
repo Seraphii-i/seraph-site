@@ -1,286 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seraph</title>
 
-<title>Seraph</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:#0b0b0b;
-    color:white;
-    overflow-x:hidden;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at var(--x,50%) var(--y,50%),
-    rgba(255,255,255,.08),
-    transparent 250px);
-    pointer-events:none;
-    z-index:0;
-}
-
-section{
-    position:relative;
-    z-index:1;
-    min-height:100vh;
-    padding:100px 10%;
-}
-
-.hero{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.hero h1{
-    font-size:clamp(4rem,10vw,8rem);
-    font-weight:800;
-}
-
-.hero p{
-    margin-top:15px;
-    color:#999;
-    font-size:1.2rem;
-}
-
-.hero .tags{
-    margin-top:30px;
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.tag{
-    border:1px solid #333;
-    padding:10px 18px;
-    border-radius:999px;
-    transition:.3s;
-}
-
-.tag:hover{
-    transform:translateY(-4px);
-    border-color:white;
-}
-
-h2{
-    font-size:3rem;
-    margin-bottom:30px;
-}
-
-.about{
-    max-width:850px;
-    line-height:1.8;
-    color:#cfcfcf;
-    font-size:1.1rem;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:#111;
-    border:1px solid #222;
-    border-radius:20px;
-    padding:25px;
-    transition:.35s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    border-color:#666;
-}
-
-.card h3{
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#aaa;
-    line-height:1.6;
-}
-
-.goal{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:20px;
-    border-bottom:1px solid #222;
-}
-
-.goal span{
-    color:#888;
-}
-
-footer{
-    text-align:center;
-    padding:80px 20px;
-    color:#777;
-}
-
-.fade{
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
+
+<div class="cursor-glow"></div>
 
 <section class="hero">
 
-<h1>Seraph</h1>
+    <div class="hero-content">
 
-<p>17 • Finland</p>
+        <h1>Seraph</h1>
 
-<div class="tags">
-<div class="tag">Photography</div>
-<div class="tag">Motorcycles</div>
-<div class="tag">Aviation</div>
-<div class="tag">Cybersecurity</div>
-<div class="tag">Faith</div>
-<div class="tag">Nature</div>
-</div>
+        <p class="subtitle">
+            Finland • 17 • Photography • Aviation • Motorcycles
+        </p>
 
-</section>
+        <a href="#about" class="scroll-btn">
+            Explore
+        </a>
 
-<section class="fade">
-
-<h2>About</h2>
-
-<div class="about">
-I'm a media student from Finland with a strong interest in technology,
-aviation, photography, motorcycles and the outdoors.
-
-Most of the time you'll find me working toward long-term goals,
-exploring nature, taking photos, listening to music or learning new skills.
-
-I prefer genuine conversations over small talk and value honesty,
-respect and clear communication.
-</div>
+    </div>
 
 </section>
 
-<section class="fade">
+<section id="about" class="section reveal">
 
-<h2>Interests</h2>
+    <h2>Who I Am</h2>
 
-<div class="grid">
+    <p>
+        Quiet at first. Easy-going once I get comfortable.
 
-<div class="card">
-<h3>Military Aviation</h3>
-<p>Aircraft, strategy, defence technology and military history.</p>
-</div>
+        I enjoy genuine conversations, learning useful skills,
+        spending time outdoors, and building a life with purpose.
 
-<div class="card">
-<h3>Photography & Videography</h3>
-<p>Capturing moments, landscapes, vehicles and everyday life.</p>
-</div>
-
-<div class="card">
-<h3>Motorcycles</h3>
-<p>Especially sport bikes, touring and the freedom of the road.</p>
-</div>
-
-<div class="card">
-<h3>Nature</h3>
-<p>Hiking, camping, forests, winter and northern Finland.</p>
-</div>
-
-<div class="card">
-<h3>Technology</h3>
-<p>Cybersecurity, computers and problem solving.</p>
-</div>
-
-<div class="card">
-<h3>Faith</h3>
-<p>An important part of how I approach life and the future.</p>
-</div>
-
-</div>
+        Most of my interests revolve around technology,
+        vehicles, photography, aviation, faith, and nature.
+    </p>
 
 </section>
 
-<section class="fade">
+<section class="section reveal">
 
-<h2>Current Goals</h2>
+    <h2>Things I Enjoy</h2>
 
-<div class="goal">✓ <span>Finish media studies</span></div>
-<div class="goal">✓ <span>Continue developing practical skills</span></div>
-<div class="goal">□ <span>Build a cybersecurity career</span></div>
-<div class="goal">□ <span>Earn a PPL someday</span></div>
-<div class="goal">□ <span>Move north and build a quiet life</span></div>
+    <div class="cards">
+
+        <div class="card">
+            <h3>Aviation</h3>
+            <p>
+                Military aviation, aircraft technology,
+                and hopefully earning a PPL one day.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Photography</h3>
+            <p>
+                Capturing moments, landscapes,
+                vehicles and everyday life.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Motorcycles</h3>
+            <p>
+                Sport bikes, long rides and the freedom
+                that comes with them.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Nature</h3>
+            <p>
+                Hiking, camping and escaping into forests
+                whenever possible.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Technology</h3>
+            <p>
+                Cybersecurity, computers and understanding
+                how things work.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Faith</h3>
+            <p>
+                A central part of how I approach life,
+                relationships and the future.
+            </p>
+        </div>
+
+    </div>
 
 </section>
 
-<section class="fade">
+<section class="section reveal">
 
-<h2>Future</h2>
+    <h2>Current Direction</h2>
 
-<div class="about">
-Long term, I'd like to work in cybersecurity, continue building useful
-skills and eventually live in northern Finland.
+    <div class="timeline">
 
-Outside of work, I hope to spend my time with family, photography,
-motorcycles, hiking and exploring the outdoors.
-</div>
+        <div class="timeline-item">
+            Media Studies
+        </div>
+
+        <div class="timeline-item">
+            Driver's License
+        </div>
+
+        <div class="timeline-item">
+            Military Service
+        </div>
+
+        <div class="timeline-item">
+            Cybersecurity
+        </div>
+
+        <div class="timeline-item">
+            Northern Finland
+        </div>
+
+    </div>
 
 </section>
 
 <footer>
 
-DMs Open 7/11
+    <p>
+        Thanks for visiting.
+    </p>
+
+    <h3>— Seraph</h3>
 
 </footer>
 
-<script>
-
-document.addEventListener("mousemove",(e)=>{
-document.body.style.setProperty("--x",e.clientX+"px");
-document.body.style.setProperty("--y",e.clientY+"px");
-});
-
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el);
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
